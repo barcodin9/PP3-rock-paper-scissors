@@ -4,7 +4,7 @@ def player_choice():
     """Get the player choice - rock, paper or scissors."""
 
     while True:
-        uChoice = input("Choose rock, paper or scissors: ").lower()
+        uChoice = input("Choose rock, paper or scissors: \n").lower()
         if uChoice in ["rock", "paper", "scissors"]:
             return uChoice
         else:
@@ -17,7 +17,7 @@ def cpu_choice():
 def winner(player_choice, cpu_choice):
     """Show the winner of the game."""
 
-    if player_choice == computer_choice:
+    if player_choice == cpu_choice:
         return "It's a tie!"
     
     elif (
@@ -30,10 +30,13 @@ def winner(player_choice, cpu_choice):
         return "Computer wins!"
 
 
+def play_game():
+    """Plays rock, paper, scissors."""
+    play_choice = player_choice()
+    computer_choice = cpu_choice()
+    print(f"You chose: {play_choice}\n")
+    print(f"The computer chose: {computer_choice}\n")
+    win = winner(play_choice, computer_choice)
+    print(win)
 
-play_choice = player_choice()
-computer_choice = cpu_choice()
-print(f"You chose: {play_choice}")
-print(f"The computer chose: {computer_choice}")
-win = winner(play_choice, computer_choice)
-print(win)
+play_game()
