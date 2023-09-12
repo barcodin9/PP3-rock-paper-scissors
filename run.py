@@ -10,4 +10,12 @@ def player_choice():
         else:
             print("Invalid choice. Choose rock, paper or scissors.")
 
-player_choice()
+def cpu_choice():
+    """Generate a random choice for the cpu."""
+    return random.choice(["rock", "paper", "scissors"])
+
+
+play_choice = player_choice()
+computer_choice = cpu_choice()
+print(f"You chose: {play_choice}")
+print(f"The computer chose: {computer_choice}")
