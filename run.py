@@ -14,8 +14,26 @@ def cpu_choice():
     """Generate a random choice for the cpu."""
     return random.choice(["rock", "paper", "scissors"])
 
+def winner(player_choice, cpu_choice):
+    """Show the winner of the game."""
+
+    if player_choice == computer_choice:
+        return "It's a tie!"
+    
+    elif (
+        (player_choice == "rock" and cpu_choice == "scissors") or
+        (player_choice == "paper" and cpu_choice == "rock") or
+        (player_choice == "scissors" and cpu_choice == "paper")
+    ):
+        return "You win!"
+    else:
+        return "Computer wins!"
+
+
 
 play_choice = player_choice()
 computer_choice = cpu_choice()
 print(f"You chose: {play_choice}")
 print(f"The computer chose: {computer_choice}")
+win = winner(play_choice, computer_choice)
+print(win)
