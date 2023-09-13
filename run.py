@@ -1,5 +1,6 @@
 import random
 
+
 def player_choice():
     """Get the player choice - rock, paper or scissors."""
 
@@ -10,16 +11,18 @@ def player_choice():
         else:
             print("Invalid choice. Choose rock, paper or scissors.")
 
+
 def cpu_choice():
     """Generate a random choice for the cpu."""
     return random.choice(["rock", "paper", "scissors"])
+
 
 def winner(player_choice, cpu_choice):
     """Show the winner of the game."""
 
     if player_choice == cpu_choice:
         return "It's a tie!"
-    
+
     elif (
         (player_choice == "rock" and cpu_choice == "scissors") or
         (player_choice == "paper" and cpu_choice == "rock") or
@@ -29,7 +32,9 @@ def winner(player_choice, cpu_choice):
     else:
         return "Computer wins!"
 
+
 def play_again():
+    """Prompt the player for a rematch - function based on input"""
     answer = input("Would you like to play again? (yes/no)\n")
 
     if (answer == "yes"):
@@ -37,6 +42,7 @@ def play_again():
 
     else:
         print("Okay, goodbye!")
+
 
 def play_game():
     """Plays rock, paper, scissors."""
