@@ -41,7 +41,8 @@ def play_again():
         play_game()
 
     else:
-        print("Okay, goodbye!")
+        print("Thanks for playing, goodbye!")
+        
 
 
 def play_game():
@@ -55,4 +56,9 @@ def play_game():
     play_again()
 
 
-play_game()
+if __name__ == "__main__":
+    print("Welcome to Rock, Paper, Scissors!")
+    while True:
+        play_game()
+        if play_again != "yes":
+            break
