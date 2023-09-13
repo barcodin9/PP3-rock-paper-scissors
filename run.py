@@ -21,28 +21,16 @@ def winner(player_choice, cpu_choice):
     """Show the winner of the game."""
 
     if player_choice == cpu_choice:
-        return "It's a tie!"
+        return "It's a tie!\n"
 
     elif (
         (player_choice == "rock" and cpu_choice == "scissors") or
         (player_choice == "paper" and cpu_choice == "rock") or
         (player_choice == "scissors" and cpu_choice == "paper")
     ):
-        return "You win!"
+        return "You win!\n"
     else:
-        return "Computer wins!"
-
-
-def play_again():
-    """Prompt the player for a rematch - function based on input"""
-    answer = input("Would you like to play again? (yes/no)\n")
-
-    if (answer == "yes"):
-        play_game()
-
-    else:
-        print("Thanks for playing, goodbye!")
-        
+        return "Computer wins!\n"
 
 
 def play_game():
@@ -53,12 +41,31 @@ def play_game():
     print(f"The computer chose: {computer_choice}\n")
     win = winner(play_choice, computer_choice)
     print(win)
-    play_again()
+    return win 
+
+
+def score():
+    user_score = 0
+    cpu_score = 0
+
+    while True:
+        result = play_game()
+        if "You win" in result:
+            user_score += 1
+        elif "It's a tie" in result:
+            user_score += 1
+            cpu_score += 1
+        else:
+            cpu_score += 1
+
+        print(f"Your score: {user_score} || Computer score: {cpu_score}")
 
 
 if __name__ == "__main__":
     print("Welcome to Rock, Paper, Scissors!")
     while True:
-        play_game()
-        if play_again != "yes":
+        score()
+        play_again = input("Would you like to play again? (yes/no\n")
+        if play_again.lower() != "yes":
+            print("Thanks for playing, goodbye!")
             break
