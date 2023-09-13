@@ -29,6 +29,14 @@ def winner(player_choice, cpu_choice):
     else:
         return "Computer wins!"
 
+def play_again():
+    answer = input("Would you like to play again? (yes/no)\n")
+
+    if (answer == "yes"):
+        play_game()
+
+    else:
+        print("Okay, goodbye!")
 
 def play_game():
     """Plays rock, paper, scissors."""
@@ -38,5 +46,7 @@ def play_game():
     print(f"The computer chose: {computer_choice}\n")
     win = winner(play_choice, computer_choice)
     print(win)
+    play_again()
+
 
 play_game()
