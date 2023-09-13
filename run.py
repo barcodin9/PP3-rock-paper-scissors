@@ -41,7 +41,7 @@ def play_game():
     print(f"The computer chose: {computer_choice}\n")
     win = winner(play_choice, computer_choice)
     print(win)
-    return win 
+    return win
 
 
 if __name__ == "__main__":
