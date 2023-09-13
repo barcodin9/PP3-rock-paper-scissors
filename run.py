@@ -44,7 +44,9 @@ def play_game():
     return win 
 
 
-def score():
+if __name__ == "__main__":
+    print("Welcome to Rock, Paper, Scissors!")
+
     user_score = 0
     cpu_score = 0
 
@@ -60,12 +62,7 @@ def score():
 
         print(f"Your score: {user_score} || Computer score: {cpu_score}")
 
-
-if __name__ == "__main__":
-    print("Welcome to Rock, Paper, Scissors!")
-    while True:
-        score()
-        play_again = input("Would you like to play again? (yes/no\n")
-        if play_again.lower() != "yes":
+        play_again = input("Would you like to play again? (y/n) \n")
+        if play_again.lower() != "y":
             print("Thanks for playing, goodbye!")
             break
