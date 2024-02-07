@@ -102,7 +102,7 @@ def main():
             print("Thanks for playing, goodbye!")
             break
         elif play_again.lower() != "y":
-            print("Input not valid, please enter y/n")
+            print("Input not valid, directing to home.")
             continue
 
 
