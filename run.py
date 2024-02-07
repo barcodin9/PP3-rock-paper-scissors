@@ -47,6 +47,15 @@ def play_tourney(best_of):
     user_score, cpu_score = 0, 0
     games_need = best_of // 2 + 1
 
+    while user_score < games_need and cpu_score < games_need:
+        result = play_game()
+
+        if result == "player":
+            user_score += 1
+        elif result == "cpu":
+            cpu_score += 1
+        
+        print(f"Score is - You: {user_score} || Computer: {cpu_score}")
 
 
 if __name__ == "__main__":
