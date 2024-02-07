@@ -50,56 +50,58 @@ def play_tourney(best_of):
     while user_score < games_need and cpu_score < games_need:
         result = play_game()
 
-        if result == "player":
+        if "You win!" in result:
             user_score += 1
-        elif result == "cpu":
+        elif "It's a tie" in result:
+            user_score += 0
+            cpu_score += 0
+        else:
             cpu_score += 1
         
-        print(f"Score is - You: {user_score} || Computer: {cpu_score}")
+        print(f"Score is - You: {user_score} | Computer: {cpu_score}")
+
+    if user_score > cpu_score:
+        print("You have won the Tournament!")
+    else:
+        print("Computer has won the Tournament!")
+        
+    while True:
+        play_again = input("Would you like to play again? (y/n) \n")
+        if play_again.lower() == "y":
+            play_game()
+        elif play_again.lower() == "n":
+            print("Thanks for playing, goodbye!")
+            exit()
+        else:
+            print("Input not valid, please enter y/n")
 
 
 if __name__ == "__main__":
     print("Welcome to Rock, Paper, Scissors!")
-    game_type = input("Would you like to play a single game or a best of tournemant? (Enter 'single' or 'best of'):").lower()
+    game_type = input("Would you like to play a single game or a best of tournament? (Enter 'single' or 'best of'):\n").lower()
 
     if game_type == "best of":
         while True:
             try:
-                best_of = int(input("Enter the number of games for the Tournemant, number should be odd (e.g. 3, 5, 7, 9)"))
+                best_of = int(input("Enter the number of games for the Tournament, number should be odd (e.g. 3, 5, 7, 9)\n"))
                 if best_of % 2 == 1:
+                    play_tourney(best_of)
                     break
                 else:
                     print("The number entered must be odd")
             except ValueError:
                 print("Please enter a valid number.") 
-        play_tourney(best_of)
+
     else:
         play_game()
-                
-
-    user_score = 0
-    cpu_score = 0
-
-    while True:
-        result = play_game()
-        if "You win" in result:
-            user_score += 1
-        elif "It's a tie" in result:
-            user_score += 1
-            cpu_score += 1
-        else:
-            cpu_score += 1
-
-        print(f"Your score: {user_score} || Computer score: {cpu_score}")
 
         while True:
             play_again = input("Would you like to play again? (y/n) \n")
             if play_again.lower() == "y":
-                break
+                play_game()
             elif play_again.lower() == "n":
                 print("Thanks for playing, goodbye!")
                 exit()
             else:
                 print("Input not valid, please enter y/n")
-            
             
