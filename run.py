@@ -43,6 +43,11 @@ def play_game():
     print(win)
     return win
 
+def play_tourney(best_of):
+    user_score, cpu_score = 0, 0
+    games_need = best_of // 2 + 1
+
+
 
 if __name__ == "__main__":
     print("Welcome to Rock, Paper, Scissors!")
