@@ -53,8 +53,7 @@ def play_tourney(best_of):
         if "You win!" in result:
             user_score += 1
         elif "It's a tie" in result:
-            user_score += 0
-            cpu_score += 0
+            pass
         else:
             cpu_score += 1
         
@@ -64,44 +63,41 @@ def play_tourney(best_of):
         print("You have won the Tournament!")
     else:
         print("Computer has won the Tournament!")
-        
+    
+
+def main():
     while True:
-        play_again = input("Would you like to play again? (y/n) \n")
-        if play_again.lower() == "y":
+        print("Welcome to Rock, Paper, Scissors!")
+        game_type = input("Would you like to play a single game or a best of tournament? (Enter 'single' or 'best of'):\n").lower()
+
+        if game_type == "best of":
+            while True:
+                try:
+                    best_of = int(input("Enter the number of games for the Tournament, number should be odd (e.g. 3, 5, 7, 9)\n"))
+                    if best_of % 2 == 1:
+                        play_tourney(best_of)
+                        break
+                    else:
+                        print("The number entered must be odd")
+                except ValueError:
+                    print("Please enter a valid number.") 
+        elif game_type == "single":
             play_game()
+        else:
+            print("Input not valid, please enter 'single' or 'best of")
+            continue
+
+        play_again = input("Would you like to play again? (y/n) \n")
+
+        if play_again.lower() == "y":
+            continue
         elif play_again.lower() == "n":
             print("Thanks for playing, goodbye!")
-            exit()
-        else:
+            break
+        elif play_again.lower() != "y":
             print("Input not valid, please enter y/n")
+            continue
 
 
 if __name__ == "__main__":
-    print("Welcome to Rock, Paper, Scissors!")
-    game_type = input("Would you like to play a single game or a best of tournament? (Enter 'single' or 'best of'):\n").lower()
-
-    if game_type == "best of":
-        while True:
-            try:
-                best_of = int(input("Enter the number of games for the Tournament, number should be odd (e.g. 3, 5, 7, 9)\n"))
-                if best_of % 2 == 1:
-                    play_tourney(best_of)
-                    break
-                else:
-                    print("The number entered must be odd")
-            except ValueError:
-                print("Please enter a valid number.") 
-
-    else:
-        play_game()
-
-        while True:
-            play_again = input("Would you like to play again? (y/n) \n")
-            if play_again.lower() == "y":
-                play_game()
-            elif play_again.lower() == "n":
-                print("Thanks for playing, goodbye!")
-                exit()
-            else:
-                print("Input not valid, please enter y/n")
-            
+    main()
