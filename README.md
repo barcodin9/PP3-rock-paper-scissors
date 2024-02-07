@@ -157,6 +157,9 @@ I ran the code through the CI Code Linter and returned no errors (long strings a
 - Heroku - Used as a coding environment.
 - CI Python Linter - Used to validate Python.
 
+## Credits
+Python Cheatsheet - https://www.pythoncheatsheet.org/cheatsheet/built-in-functions
+Markdown Cheathsheet - https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 # Bugs 
 
