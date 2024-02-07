@@ -46,6 +46,7 @@ def play_game():
 
 if __name__ == "__main__":
     print("Welcome to Rock, Paper, Scissors!")
+    game_type = input("Would you like to play a single game or a best of tournemant? (Enter 'single' or 'best of'):").lower()
 
     user_score = 0
     cpu_score = 0
