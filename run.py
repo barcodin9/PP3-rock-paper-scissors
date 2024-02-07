@@ -62,13 +62,14 @@ if __name__ == "__main__":
 
         print(f"Your score: {user_score} || Computer score: {cpu_score}")
 
-        play_again = input("Would you like to play again? (y/n) \n")
-        if play_again.lower() == "y":
-            break
-        elif play_again.lower() == "n":
-            print("Thanks for playing, goodbye!")
-            exit()
-        else:
-            print("Input not valid, please enter y/n")
+        while True:
+            play_again = input("Would you like to play again? (y/n) \n")
+            if play_again.lower() == "y":
+                break
+            elif play_again.lower() == "n":
+                print("Thanks for playing, goodbye!")
+                exit()
+            else:
+                print("Input not valid, please enter y/n")
             
             
