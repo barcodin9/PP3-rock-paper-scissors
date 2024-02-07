@@ -48,6 +48,21 @@ if __name__ == "__main__":
     print("Welcome to Rock, Paper, Scissors!")
     game_type = input("Would you like to play a single game or a best of tournemant? (Enter 'single' or 'best of'):").lower()
 
+    if game_type == "best of":
+        while True:
+            try:
+                best_of = int(input("Enter the number of games for the Tournemant, number should be odd (e.g. 3, 5, 7, 9)"))
+                if best_of % 2 == 1:
+                    break
+                else:
+                    print("The number entered must be odd")
+            except ValueError:
+                print("Please enter a valid number.") 
+        play_tourney(best_of)
+    else:
+        play_game()
+                
+
     user_score = 0
     cpu_score = 0
 
