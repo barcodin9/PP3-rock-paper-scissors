@@ -43,6 +43,7 @@ def play_game():
     print(win)
     return win
 
+
 def play_tourney(best_of):
     """Plays a best of 'X' game of rock, paper, scissors, multiple games played until overall winner determined."""
     user_score, cpu_score = 0, 0
@@ -57,14 +58,14 @@ def play_tourney(best_of):
             pass
         else:
             cpu_score += 1
-        
+
         print(f"Score is - You: {user_score} | Computer: {cpu_score}")
 
     if user_score > cpu_score:
         print("You have won the Tournament!")
     else:
         print("Computer has won the Tournament!")
-    
+
 
 def main():
     while True:
@@ -83,7 +84,7 @@ def main():
                     else:
                         print("The number entered must be odd")
                 except ValueError:
-                    print("Please enter a valid number.") 
+                    print("Please enter a valid number.")
 
             """If user selects single, directs to play_game function and plays individual game of RPS without stat tracking."""
         elif game_type == "single":
