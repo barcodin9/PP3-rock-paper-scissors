@@ -95,7 +95,7 @@ def main():
 
             """If user enters invalid input - 'restarts' loop"""
         else:
-            print("Input not valid, please enter 'single' or 'best of")
+            print("Input not valid, please enter 'single' or 'best of'")
             continue
 
         play_again = input("Would you like to play again? (y/n) \n")
