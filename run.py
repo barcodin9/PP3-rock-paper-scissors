@@ -45,7 +45,8 @@ def play_game():
 
 
 def play_tourney(best_of):
-    """Plays a best of 'X' game of rock, paper, scissors, multiple games played until overall winner determined."""
+    """Plays a best of 'X' game of rock, paper, scissors,
+    multiple games played until overall winner determined."""
     user_score, cpu_score = 0, 0
     games_need = best_of // 2 + 1
 
@@ -76,7 +77,8 @@ def main():
             """User select the type of game they would like to play"""
             while True:
                 try:
-                    """Ensure user puts in odd number for proper tourney functionality"""
+                    """Ensure user puts in odd number for
+                    proper tourney functionality"""
                     best_of = int(input("Enter the number of games for the Tournament, number should be odd (e.g. 3, 5, 7, 9)\n"))
                     if best_of % 2 == 1:
                         play_tourney(best_of)
@@ -86,7 +88,8 @@ def main():
                 except ValueError:
                     print("Please enter a valid number.")
 
-            """If user selects single, directs to play_game function and plays individual game of RPS without stat tracking."""
+            """If user selects single, directs to play_game
+            function and plays individual game of RPS without stat tracking."""
         elif game_type == "single":
             play_game()
 
